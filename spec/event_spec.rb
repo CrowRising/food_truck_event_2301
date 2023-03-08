@@ -71,4 +71,21 @@ RSpec.describe Event do
     end
   end
   
+  describe '#overstocked_items' do
+    it 'has list of overstocked items' do
+
+    end
+  end
+
+  describe '#sorted_items' do
+    it 'has list of items sorted alphabetically' do
+
+    end
+  end
+
+  describe '#total_inventory' do
+    it 'has list of total inventory' do
+      
+    end
+  end
 end
