@@ -113,6 +113,7 @@ RSpec.describe Event do
       @event.add_food_truck(@food_truck2)
       @event.add_food_truck(@food_truck3)
 
+      expect(@event.total_inventory).to be_a Hash
     end
   end
 end

@@ -20,6 +20,7 @@ class Event
   end
 
   def overstocked_items
+
     #this method  will retund an array of items that have a quantity
       #greater than 50 and are sold by more than one truck
         #iterate over total inventory find inventoty by truck 
@@ -31,8 +32,9 @@ class Event
     @food_trucks.map do |food_truck|
       food_truck.inventory.keys.flatten.uniq.map do |item|
         inventory_total[item] = { food_trucks: food_trucks_that_sell(item),
-                                  quantity: food_trucks_that_sell(item).sum }
+                                  quantity: food_trucks_that_sell(item).sum { |food_truck| food_truck.check_stock(item)}}
       end
     end
+    inventory_total
   end
 end
