@@ -13,3 +13,20 @@ RSpec.describe Event do
     @item3 = Item.new({name: "Peach-Raspberry Nice Cream", price: "$5.30"})
     @item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
   end
+
+  describe '#intialize' do
+    it 'exists' do
+      expect(@event).to be_an(Event)
+    end
+  end
+
+  describe '#attributes' do
+    it 'has name' do
+      expect(@event.name).to eq('South Pearl Street Farmers Market')
+    end
+
+    it 'has food trucks' do
+      expect(@event.food_trucks).to eq([])
+    end
+  end
+end
