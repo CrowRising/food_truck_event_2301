@@ -88,7 +88,7 @@ RSpec.describe Event do
   end
 
   describe '#sorted_items' do
-    xit 'has list of items sorted alphabetically' do
+    it 'has list of items sorted alphabetically' do
       @food_truck1.stock(@item1, 35) 
       @food_truck1.stock(@item2, 7)
       @food_truck2.stock(@item4, 50)
@@ -99,6 +99,7 @@ RSpec.describe Event do
       @event.add_food_truck(@food_truck2)
       @event.add_food_truck(@food_truck3)
 
+      expect(@event.sorted_items).to eq(['Apple Pie (Slice)', "Banana Nice Cream", 'Peach Pie (Slice)', "Peach-Raspberry Nice Cream" ])
     end
   end
 
