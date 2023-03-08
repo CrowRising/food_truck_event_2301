@@ -1,11 +1,13 @@
 class FoodTruck
   attr_reader :name,
               :inventory, 
-              :check_stock
+              :check_stock, 
+              :potential_revenue
 
   def initialize(name)
     @name = name
     @inventory = Hash.new(0)
+    @potential_revenue = 0.0
   end
 
   def check_stock(item)
@@ -18,5 +20,7 @@ class FoodTruck
 
   def stock(item, quantity)
     @inventory[item] += quantity
+    @potential_revenue += (item.price * quantity)
   end
+
 end
