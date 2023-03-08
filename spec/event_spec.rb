@@ -72,20 +72,47 @@ RSpec.describe Event do
   end
   
   describe '#overstocked_items' do
-    it 'has list of overstocked items' do
+    xit 'has list of overstocked items' do
+      @food_truck1.stock(@item1, 35) 
+      @food_truck1.stock(@item2, 7)
+      @food_truck2.stock(@item4, 50)
+      @food_truck2.stock(@item3, 25)
+      @food_truck3.stock(@item1, 65) 
+
+      @event.add_food_truck(@food_truck1)
+      @event.add_food_truck(@food_truck2)
+      @event.add_food_truck(@food_truck3)
 
     end
   end
 
   describe '#sorted_items' do
-    it 'has list of items sorted alphabetically' do
+    xit 'has list of items sorted alphabetically' do
+      @food_truck1.stock(@item1, 35) 
+      @food_truck1.stock(@item2, 7)
+      @food_truck2.stock(@item4, 50)
+      @food_truck2.stock(@item3, 25)
+      @food_truck3.stock(@item1, 65) 
+
+      @event.add_food_truck(@food_truck1)
+      @event.add_food_truck(@food_truck2)
+      @event.add_food_truck(@food_truck3)
 
     end
   end
 
   describe '#total_inventory' do
-    it 'has list of total inventory' do
-      
+    xit 'has list of total inventory' do
+      @food_truck1.stock(@item1, 35) 
+      @food_truck1.stock(@item2, 7)
+      @food_truck2.stock(@item4, 50)
+      @food_truck2.stock(@item3, 25)
+      @food_truck3.stock(@item1, 65) 
+
+      @event.add_food_truck(@food_truck1)
+      @event.add_food_truck(@food_truck2)
+      @event.add_food_truck(@food_truck3)
+
     end
   end
 end

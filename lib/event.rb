@@ -18,4 +18,13 @@ class Event
   def food_trucks_that_sell(item)
     @food_trucks.select { |food_truck| food_truck.inventory.include?(item) }
   end
+
+  def overstocked_items
+    #this method  will retund an array of items that have a quantity
+      #greater than 50 and are sold by more than one truck
+        #iterate over total inventory find inventoty by truck 
+          # inventory by quantity and use a && operator
+  end
+
+  def total_inventory
 end
