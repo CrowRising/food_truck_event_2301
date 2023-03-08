@@ -102,7 +102,7 @@ RSpec.describe Event do
   end
 
   describe '#total_inventory' do
-    xit 'has list of total inventory' do
+    it 'has list of total inventory' do
       @food_truck1.stock(@item1, 35) 
       @food_truck1.stock(@item2, 7)
       @food_truck2.stock(@item4, 50)

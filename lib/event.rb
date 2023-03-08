@@ -27,4 +27,12 @@ class Event
   end
 
   def total_inventory
+    inventory_total = {}
+    @food_trucks.map do |food_truck|
+      food_truck.inventory.keys.flatten.uniq.map do |item|
+        inventory_total[item] = { food_trucks: food_trucks_that_sell(item),
+                                  quantity: food_trucks_that_sell(item).sum }
+      end
+    end
+  end
 end
