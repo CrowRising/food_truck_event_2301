@@ -72,7 +72,7 @@ RSpec.describe Event do
   end
   
   describe '#overstocked_items' do
-    xit 'has list of overstocked items' do
+    it 'has list of overstocked items' do
       @food_truck1.stock(@item1, 35) 
       @food_truck1.stock(@item2, 7)
       @food_truck2.stock(@item4, 50)
