@@ -20,7 +20,9 @@ class Event
   end
 
   def overstocked_items
-
+    total_inventory.select do |item|
+      food_trucks_that_sell(item).length >= 2 && food_trucks_that_sell(item).sum { |food_truck| food_truck.check_stock(item) } > 50
+    end
     #this method  will retund an array of items that have a quantity
       #greater than 50 and are sold by more than one truck
         #iterate over total inventory find inventoty by truck 
