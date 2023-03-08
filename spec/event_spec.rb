@@ -83,7 +83,7 @@ RSpec.describe Event do
       @event.add_food_truck(@food_truck2)
       @event.add_food_truck(@food_truck3)
 
-      expect(@event.overstocked_items).to eq(@item1)
+      expect(@event.overstocked_items).to eq([@item1])
     end
   end
 
