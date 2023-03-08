@@ -7,7 +7,7 @@ class Event
     @food_trucks = []
   end
 
-  def  add_food_truck(food_truck)
+  def add_food_truck(food_truck)
     @food_trucks << food_truck
   end
 
@@ -25,11 +25,6 @@ class Event
       food_trucks_that_sell(key).sum {|truck| truck.check_stock(key)} > 50
     end
   end
-    #this method  will retund an array of items that have a quantity
-      #greater than 50 and are sold by more than one truck
-        #iterate over total inventory find inventoty by truck 
-          # inventory by quantity and use a && operator
-
 
   def total_inventory
     inventory_total = {}
@@ -40,5 +35,14 @@ class Event
       end
     end
     inventory_total
+  end
+
+  def sorted_items_list
+    list = @food_trucks.flat_map do |food_truck|
+      food_truck.inventory.map do |key, _|
+        key.name
+      end
+    end
+    list.uniq.sort
   end
 end

@@ -3,8 +3,8 @@ require './lib/food_truck'
 
 RSpec.describe Item do
   before(:each) do
-    @item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
-    @item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
+    @item1 = Item.new({ name: 'Peach Pie (Slice)', price: "$3.75" })
+    @item2 = Item.new({ name: 'Apple Pie (Slice)', price: '$2.50' })
   end
 
   describe '#initialize' do
@@ -16,8 +16,8 @@ RSpec.describe Item do
 
   describe '#attributes' do 
     it 'has attributes' do
-      expect(@item2.name).to eq("Apple Pie (Slice)")
-      expect(@item1.name).to eq("Peach Pie (Slice)")
+      expect(@item2.name).to eq('Apple Pie (Slice)')
+      expect(@item1.name).to eq('Peach Pie (Slice)')
     end
 
     it 'has price' do
