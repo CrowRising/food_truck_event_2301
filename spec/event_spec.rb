@@ -32,15 +32,17 @@ RSpec.describe Event do
 
   describe '#adds trucks with stock to event' do
     it 'stocks items to trucks and adds trucks to event' do
-      @food_truck1.stock(item1, 35) 
-      @food_truck1.stock(item2, 7)
-      @food_truck2.stock(item4, 50)
-      @food_truck2.stock(item3, 25)
-      @food_truck3.stock(item1, 65) 
+      @food_truck1.stock(@item1, 35) 
+      @food_truck1.stock(@item2, 7)
+      @food_truck2.stock(@item4, 50)
+      @food_truck2.stock(@item3, 25)
+      @food_truck3.stock(@item1, 65) 
 
-      @event.add_food_truck(food_truck1)    
-      @event.add_food_truck(food_truck2)    
-      @event.add_food_truck(food_truck3)
+      @event.add_food_truck(@food_truck1)    
+      @event.add_food_truck(@food_truck2)    
+      @event.add_food_truck(@food_truck3)
+
+      expect(@event.food_trucks).to eq([@food_truck1, @food_truck2, @food_truck3])
     end
   end
   
